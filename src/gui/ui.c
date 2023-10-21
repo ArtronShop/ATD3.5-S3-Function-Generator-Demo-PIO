@@ -12,6 +12,11 @@
 // SCREEN: ui_Index
 void ui_Index_screen_init(void);
 lv_obj_t *ui_Index;
+lv_obj_t *ui_Panel10;
+lv_obj_t *ui_Panel9;
+lv_obj_t *ui_wave_form_img;
+lv_obj_t *ui_Label14;
+lv_obj_t *ui_output_log_label;
 lv_obj_t *ui_Panel1;
 lv_obj_t *ui_Label4;
 lv_obj_t *ui_Panel2;
@@ -43,10 +48,7 @@ lv_obj_t *ui_offset_input;
 lv_obj_t *ui_Label10;
 lv_obj_t *ui_output_btn;
 lv_obj_t *ui_Label13;
-lv_obj_t *ui_Panel9;
-lv_obj_t *ui_wave_form_img;
-lv_obj_t *ui_Label14;
-lv_obj_t *ui_output_log_label;
+lv_obj_t *ui_keypad;
 lv_obj_t *ui____initial_actions0;
 
 ///////////////////// TEST LVGL SETTINGS ////////////////////

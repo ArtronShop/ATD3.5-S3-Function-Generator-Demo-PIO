@@ -97,6 +97,19 @@ void output_click_cb(lv_event_t * e) {
   }
 }
 
+void keyboard_handle(lv_event_t * e) {
+  lv_event_code_t code = lv_event_get_code(e);
+  lv_obj_t * target = lv_event_get_target(e);
+
+  //if(code == LV_EVENT_FOCUSED) {
+    lv_keyboard_set_textarea(ui_keypad, target);
+    lv_obj_clear_flag(ui_keypad, LV_OBJ_FLAG_HIDDEN);
+  /*} else if(code == LV_EVENT_DEFOCUSED) {
+    lv_keyboard_set_textarea(ui_keypad, NULL);
+    lv_obj_add_flag(ui_keypad, LV_OBJ_FLAG_HIDDEN);
+  }*/
+}
+
 // Sound
 #define I2S_DOUT      47
 #define I2S_BCLK      48
@@ -201,6 +214,16 @@ void setup() {
 
   lv_obj_add_event_cb(ui_output_btn, output_click_cb, LV_EVENT_CLICKED, NULL);
   lv_label_set_text(ui_output_log_label, "None");
+
+
+  lv_obj_add_event_cb(ui_freq_input, keyboard_handle, LV_EVENT_CLICKED, NULL);
+  lv_obj_add_event_cb(ui_amplitude_input, keyboard_handle, LV_EVENT_FOCUSED, NULL);
+  lv_obj_add_event_cb(ui_offset_input, keyboard_handle, LV_EVENT_FOCUSED, NULL);
+
+  lv_obj_add_event_cb(ui_keypad, [](lv_event_t * e) {
+    lv_keyboard_set_textarea(ui_keypad, NULL);
+    lv_obj_add_flag(ui_keypad, LV_OBJ_FLAG_HIDDEN);
+  }, LV_EVENT_READY, NULL);
 
   pinMode(LCD_BL_PIN, OUTPUT);
   digitalWrite(LCD_BL_PIN, HIGH);

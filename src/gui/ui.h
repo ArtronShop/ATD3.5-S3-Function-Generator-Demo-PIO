@@ -17,6 +17,11 @@ extern "C" {
 // SCREEN: ui_Index
 void ui_Index_screen_init(void);
 extern lv_obj_t *ui_Index;
+extern lv_obj_t *ui_Panel10;
+extern lv_obj_t *ui_Panel9;
+extern lv_obj_t *ui_wave_form_img;
+extern lv_obj_t *ui_Label14;
+extern lv_obj_t *ui_output_log_label;
 extern lv_obj_t *ui_Panel1;
 extern lv_obj_t *ui_Label4;
 extern lv_obj_t *ui_Panel2;
@@ -48,10 +53,7 @@ extern lv_obj_t *ui_offset_input;
 extern lv_obj_t *ui_Label10;
 extern lv_obj_t *ui_output_btn;
 extern lv_obj_t *ui_Label13;
-extern lv_obj_t *ui_Panel9;
-extern lv_obj_t *ui_wave_form_img;
-extern lv_obj_t *ui_Label14;
-extern lv_obj_t *ui_output_log_label;
+extern lv_obj_t *ui_keypad;
 extern lv_obj_t *ui____initial_actions0;
 
 LV_IMG_DECLARE( ui_img_sine_png);   // assets\sine.png
